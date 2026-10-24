@@ -98,6 +98,24 @@ def loadObject(filePath):
     import pickle
     file = open(filePath, 'rb')
     temp = pickle.load(file)
+    # # --- DEBUG: Inspect what is actually inside nested_scores ---
+    # def inspect_obj(obj, path="root"):
+    #     print(f"{path}: {type(obj)}")
+    #     if isinstance(obj, dict):
+    #         for k, v in obj.items():
+    #             inspect_obj(v, f"{path}['{k}']")
+    #     elif isinstance(obj, (list, tuple)):
+    #         for i, v in enumerate(obj):
+    #             if i < 10: # Only print first 3 items to avoid spam
+    #                 inspect_obj(v, f"{path}[{i}]")
+    #             elif i == 10:
+    #                 print(f"{path}[...]: (truncated)")
+    #                 break
+    # print("\n=== INSPECTING nested_scores ===")
+    # inspect_obj(temp)
+    # print("================================\n")
+    # # -----------------------------------------------------------
+    # stop
     return temp
 
 def createIfNotExist(filePath, fGetResult, overwrite = False):
